@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário - Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+</head>
+<body>
+    <h1 class="text-center mt-2">Suas informações</h1>
+    <form id="form" class="container p-2 needs-validation">
+        <div class="mb-1">
+            <label for="nomeCompleto" class="form-label">Nome Completo</label>
+            <input type="text" class="form-control" id="nomeCompleto" placeholder="Nome Completo" required>
+            <div class="invalid-feedback">
+                O nome deve ter entre 3 e 150 caracteres
+            </div>
+        </div>
+        <div class="mb-1">
+            <label for="email" class="form-label">E-mail</label>
+            <input type="email" class="form-control" id="email" placeholder="email@email.com" required>
+            <div class="invalid-feedback">
+                Por favor, insira um e-mail válido
+            </div>
+        </div>
+        <div class="mb-1">
+            <label for="telefone" class="form-label">Telefone</label>
+            <input type="tel" class="form-control" id="telefone" placeholder="email@email.com" required>
+            <div class="invalid-feedback">
+                Por favor, insira um telefone válido no formato (XX) XXXXX-XXXX
+            </div>
+        </div>
+        <div class="mb-1">
+            <label for="dataNascimento" class="form-label">Data de nascimento</label>
+            <input type="date" class="form-control" id="dataNascimento" required>
+            <div class="invalid-feedback">
+                Você deve ter pelo menos 16 anos de idade
+            </div>
+        </div>
+
+        <div class="d-grid mt-3">
+            <button type="submit" class="btn btn-primary">Avançar</button>
+        </div>
+    </form>
+
+    <script type="module" src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+</body>
+</html>
