@@ -1,0 +1,10 @@
+CREATE DATABASE MIMOTECA;
+
+USE MIMOTECA;
+
+CREATE TABLE Quotes (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Pensamento VARCHAR(300),
+    Autor VARCHAR(50),
+    Modelo INT
+);
