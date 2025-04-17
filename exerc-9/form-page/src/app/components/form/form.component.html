@@ -1,25 +1,93 @@
-<div class="p-4">
+<div class="p-4 container">
   <h2 class="text-center">Inscrição</h2>
-  <form action="" class="d-flex flex-column gap-2">
-    <div class="d-flex w-100">
-      <div class="mr-1">
+  <form [formGroup]="contatoForm" (ngSubmit)="onSubmit()" class="d-flex flex-column gap-2">
+    <div class="d-flex gap-2">
+      <!-- Nome -->
+      <div class="w-100">
         <label for="name" class="form-label">Nome:</label>
-        <input type="text" class="form-control" id="name" name="name" required>
+        <input
+          type="text"
+          class="form-control"
+          [class.is-invalid]="contatoForm.get('name')?.invalid && (contatoForm.get('name')?.dirty || contatoForm.get('name')?.touched)"
+          id="name"
+          formControlName="name"
+        >
+        <div *ngIf="contatoForm.get('name')?.invalid && (contatoForm.get('name')?.dirty || contatoForm.get('name')?.touched)"
+             class="invalid-feedback">
+          <small *ngIf="contatoForm.get('name')?.errors?.['required']">Nome é obrigatório</small>
+          <small *ngIf="contatoForm.get('name')?.errors?.['maxlength']">Máximo de 300 caracteres</small>
+        </div>
       </div>
-      <div class="">
+
+      <!-- Email -->
+      <div class="w-100">
         <label for="email" class="form-label">Email:</label>
-        <input type="email" class="form-control" id="email" name="email" required>
+        <input
+          type="email"
+          class="form-control"
+          [class.is-invalid]="contatoForm.get('email')?.invalid && (contatoForm.get('email')?.dirty || contatoForm.get('email')?.touched)"
+          id="email"
+          formControlName="email"
+        >
+        <div *ngIf="contatoForm.get('email')?.invalid && (contatoForm.get('email')?.dirty || contatoForm.get('email')?.touched)"
+             class="invalid-feedback">
+          <small *ngIf="contatoForm.get('email')?.errors?.['required']">Email é obrigatório</small>
+          <small *ngIf="contatoForm.get('email')?.errors?.['email']">Email inválido</small>
+        </div>
       </div>
     </div>
-    <div class="d-flex w-100">
-      <div class="mr-1">
+
+    <div class="d-flex gap-2">
+      <!-- Estado -->
+      <div class="w-100">
         <label for="estado" class="form-label">Estado:</label>
-        <input type="text" class="form-control" id="estado" name="estado" required>
+        <input
+          type="text"
+          class="form-control"
+          [class.is-invalid]="contatoForm.get('estado')?.invalid && (contatoForm.get('estado')?.dirty || contatoForm.get('estado')?.touched)"
+          id="estado"
+          formControlName="estado"
+        >
+        <div *ngIf="contatoForm.get('estado')?.invalid && (contatoForm.get('estado')?.dirty || contatoForm.get('estado')?.touched)"
+             class="invalid-feedback">
+          <small *ngIf="contatoForm.get('estado')?.errors?.['required']">Estado é obrigatório</small>
+        </div>
       </div>
-      <div class="">
+
+      <!-- Cidade -->
+      <div class="w-100">
         <label for="cidade" class="form-label">Cidade:</label>
-        <input type="text" class="form-control" id="cidade" name="cidade" required>
+        <input
+          type="text"
+          class="form-control"
+          [class.is-invalid]="contatoForm.get('cidade')?.invalid && (contatoForm.get('cidade')?.dirty || contatoForm.get('cidade')?.touched)"
+          id="cidade"
+          formControlName="cidade"
+        >
+        <div *ngIf="contatoForm.get('cidade')?.invalid && (contatoForm.get('cidade')?.dirty || contatoForm.get('cidade')?.touched)"
+             class="invalid-feedback">
+          <small *ngIf="contatoForm.get('cidade')?.errors?.['required']">Cidade é obrigatória</small>
+        </div>
       </div>
     </div>
+
+    <!-- Instituição -->
+    <div class="">
+      <label for="instituicao" class="form-label">Instituição:</label>
+      <input
+        type="text"
+        class="form-control"
+        [class.is-invalid]="contatoForm.get('instituicao')?.invalid && (contatoForm.get('instituicao')?.dirty || contatoForm.get('instituicao')?.touched)"
+        id="instituicao"
+        formControlName="instituicao"
+      >
+      <div *ngIf="contatoForm.get('instituicao')?.invalid && (contatoForm.get('instituicao')?.dirty || contatoForm.get('instituicao')?.touched)"
+           class="invalid-feedback">
+        <small *ngIf="contatoForm.get('instituicao')?.errors?.['required']">Instituição é obrigatória</small>
+        <small *ngIf="contatoForm.get('instituicao')?.errors?.['maxlength']">Máximo de 300 caracteres</small>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-1" [disabled]="contatoForm.invalid">Enviar</button>
   </form>
 </div>
