@@ -1,0 +1,52 @@
+<form class="w-75 mx-auto p-5">
+  <div class="d-flex flex-column w-75 mx-auto text-start mt-2">
+    <label class="form-label" for="">Pensamento: </label>
+    <textarea class="form-control"></textarea>
+  </div>
+  <div class="d-flex flex-column w-75 mx-auto text-start mt-2">
+    <label class="form-label" for="">Autor(a) ou Fonte: </label>
+    <input class="form-control" type="text" />
+  </div>
+  <div class="mt-2">
+    <p>Selecione o modelo do card: </p>
+    <div class="d-flex justify-content-around">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" value="1">
+        <label class="form-check-label" for="inlineRadio1">Modelo 1</label>
+        <div>
+          <app-card
+            [cardText]="'Some quick example text to build on the card title and make up the bulk of the cards content.'"
+            [cardTitle]="'Previa'"
+            [cardAutor]="'John Doe'"
+          ></app-card>
+        </div>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" value="2">
+        <label class="form-check-label" for="inlineRadio2">Modelo 2</label>
+        <div>
+          <app-card
+            [cardText]="'Some quick example text to build on the card title and make up the bulk of the cards content.'"
+            [cardTitle]="'Previa'"
+            [cardAutor]="'John Doe'"
+          ></app-card>
+        </div>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" value="3">
+        <label class="form-check-label" for="inlineRadio3">Modelo 3</label>
+        <div>
+          <app-card
+            [cardText]="'Some quick example text to build on the card title and make up the bulk of the cards content.'"
+            [cardTitle]="'Previa'"
+            [cardAutor]="'John Doe'"
+          ></app-card>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="">
+    <app-botao [texto]="'Enviar'"></app-botao>
+    <app-botao [texto]="'Cancelar'"></app-botao>
+  </div>
+</form>
